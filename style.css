@@ -1,0 +1,79 @@
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; }
+
+:root {
+    --primary: #ff6b00; /* Naranja vibrante profesional */
+    --dark: #1a1a1a;
+    --light: #f4f4f9;
+    --white: #ffffff;
+    --grey: #e0e0e0;
+}
+
+body { background: var(--light); color: var(--dark); line-height: 1.6; }
+
+/* NAVBAR - Limpia y sin links azules */
+.navbar {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1.5rem 8%; background: var(--white); box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+    position: sticky; top: 0; z-index: 1000;
+}
+.logo { font-size: 1.4rem; font-weight: 900; color: var(--dark); letter-spacing: 1px; }
+.logo span { color: var(--primary); }
+.menu a { 
+    text-decoration: none; color: var(--dark); margin: 0 1.5rem; 
+    font-weight: 700; font-size: 0.85rem; transition: 0.3s; 
+}
+.menu a:hover { color: var(--primary); }
+.nav-button { background: var(--dark); color: white; border: none; padding: 0.8rem 1.5rem; font-weight: 700; cursor: pointer; }
+
+/* HERO - Fondo Claro e Impactante */
+.hero { 
+    padding: 100px 8%; background: var(--grey); 
+    border-bottom: 8px solid var(--primary);
+}
+.tag { color: var(--primary); font-weight: 900; text-transform: uppercase; letter-spacing: 2px; }
+.hero h1 { font-size: 4rem; font-weight: 900; line-height: 1; margin: 1rem 0; }
+.hero h1 span { color: var(--primary); }
+.hero p { max-width: 600px; font-size: 1.1rem; color: #555; }
+
+/* INFO CARD */
+.details { padding: 80px 8%; }
+.info-card { background: var(--white); padding: 50px; border-radius: 5px; box-shadow: 0 10px 40px rgba(0,0,0,0.05); }
+.divider { width: 50px; height: 5px; background: var(--primary); margin: 1rem 0; }
+.feature-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 2rem; }
+.f-item i { color: var(--primary); margin-right: 10px; font-size: 1.2rem; }
+
+/* FORMULARIO */
+.form-section { padding: 80px 8%; background: var(--dark); color: var(--white); }
+.form-wrapper { max-width: 800px; margin: 0 auto; }
+.form-wrapper h2 { margin-bottom: 2rem; text-align: center; }
+.row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+input, select, textarea { 
+    width: 100%; padding: 1.2rem; margin-bottom: 1rem; border: none; 
+    background: #2a2a2a; color: white; border-radius: 4px; outline: none;
+}
+button[type="submit"] { 
+    width: 100%; padding: 1.2rem; background: var(--primary); color: white; 
+    border: none; font-weight: 900; cursor: pointer; transition: 0.3s;
+}
+button:hover { background: white; color: var(--primary); }
+
+/* EQUIPO GRANDE Y PROFESIONAL */
+.team-section { padding: 100px 8%; background: var(--white); }
+.team-header { text-align: center; margin-bottom: 60px; }
+.team-header h2 { font-size: 2.5rem; font-weight: 900; }
+
+.big-team-grid { 
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 30px; 
+}
+.member { 
+    padding: 40px; background: var(--light); border-bottom: 5px solid var(--grey);
+    transition: 0.3s; position: relative;
+}
+.member:hover { border-bottom-color: var(--primary); transform: translateY(-10px); background: #fff; box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
+.m-number { font-size: 3rem; font-weight: 900; color: rgba(0,0,0,0.05); position: absolute; top: 10px; right: 20px; }
+.m-role { color: var(--primary); font-weight: 900; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; }
+.member h3 { font-size: 1.8rem; margin: 0.5rem 0; }
+.member p { font-size: 0.9rem; color: #666; }
+
+footer { padding: 50px; text-align: center; background: #111; color: #555; font-weight: 700; font-size: 0.8rem; }
