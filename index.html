@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RB Digital | Ingeniería de Infraestructura</title>
+    <title>RB Digital | Monitor de Infraestructura</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -18,35 +18,35 @@
             <a href="#monitor">Monitor</a>
             <a href="#equipo">Autoría</a>
         </div>
-        <button class="nav-button">ACCESO ADMIN</button>
+        <button class="nav-button">MODO ADMIN</button>
     </nav>
 
     <header id="inicio" class="hero">
         <div class="hero-text">
             <span class="tag">Río Bravo, Tamaulipas</span>
             <h1>Ingeniería de <span>Caminos</span></h1>
-            <p>Plataforma técnica para la gestión urbana y optimización de infraestructura vial.</p>
+            <p>Sincronización en la nube para la gestión de infraestructura urbana.</p>
         </div>
     </header>
 
     <section id="reportar" class="form-section">
         <div class="container">
             <div class="form-wrapper">
-                <span class="tag" style="color: var(--primary);">Registro Técnico</span>
+                <span class="tag" style="color: var(--primary);">Entrada de Datos</span>
                 <h2 style="color: white; margin-bottom: 2rem;">Reporte de Incidencias</h2>
                 <form id="reportForm">
                     <div class="row">
-                        <input type="text" placeholder="Nombre completo" required>
-                        <input type="text" placeholder="Ubicación (Calle/Colonia)" required>
+                        <input type="text" id="form-nombre" placeholder="Nombre completo" required>
+                        <input type="text" id="form-ubicacion" placeholder="Ubicación exacta (Calle/Colonia)" required>
                     </div>
-                    <select required>
+                    <select id="form-severidad" required>
                         <option value="" disabled selected>Gravedad del Daño</option>
                         <option value="urgente">Crítico / Riesgo Vial</option>
                         <option value="moderado">Moderado / Deterioro</option>
                         <option value="leve">Leve / Preventivo</option>
                     </select>
-                    <textarea placeholder="Detalles técnicos del bache o desperfecto..."></textarea>
-                    <button type="submit">SUBIR AL SISTEMA CENTRAL</button>
+                    <textarea id="form-detalles" placeholder="Describe el problema técnico aquí..." required></textarea>
+                    <button type="submit">SUBIR A LA NUBE</button>
                 </form>
             </div>
         </div>
@@ -55,9 +55,9 @@
     <section id="monitor" class="monitor-section">
         <div class="container">
             <div class="monitor-header">
-                <span class="tag">Base de Datos Pública</span>
+                <span class="tag">Base de Datos en Vivo</span>
                 <h2>Monitor de Infraestructura</h2>
-                <p>Seguimiento en tiempo real de los reportes enviados.</p>
+                <p>Haz clic en cualquier fila para ver los detalles técnicos del reporte.</p>
             </div>
             <div class="table-wrapper">
                 <table class="report-table">
@@ -66,29 +66,11 @@
                             <th>Folio</th>
                             <th>Ubicación</th>
                             <th>Severidad</th>
-                            <th>Estado</th>
+                            <th>Acción</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>#RB-2026-01</td>
-                            <td>Av. Madero con Calle 5ta</td>
-                            <td><span class="badge urgent">Crítico</span></td>
-                            <td><span class="status-icon"><i class="fas fa-tools"></i> En Proceso</span></td>
-                        </tr>
-                        <tr>
-                            <td>#RB-2026-02</td>
-                            <td>Col. Centro, Calle Juárez</td>
-                            <td><span class="badge moderate">Moderado</span></td>
-                            <td><span class="status-icon pending"><i class="fas fa-clock"></i> Pendiente</span></td>
-                        </tr>
-                        <tr>
-                            <td>#RB-2026-03</td>
-                            <td>Libramiento Sur</td>
-                            <td><span class="badge urgent">Crítico</span></td>
-                            <td><span class="status-icon fixed"><i class="fas fa-check-circle"></i> Reparado</span></td>
-                        </tr>
-                    </tbody>
+                        </tbody>
                 </table>
             </div>
         </div>
@@ -97,21 +79,15 @@
     <section id="equipo" class="team-section">
         <div class="container">
             <div class="team-header">
-                <span class="tag">Estructura Jerárquica</span>
-                <h2>Liderazgo y Créditos</h2>
+                <span class="tag">Liderazgo del Proyecto</span>
+                <h2>Créditos y Desarrollo</h2>
             </div>
-            
             <div class="leader-container">
                 <div class="leader-card">
-                    <div class="leader-number">CEO</div>
                     <span class="m-role">Lead Software Engineer</span>
                     <h3>Elias</h3>
-                    <p>Diseñador y desarrollador principal del ecosistema RB Digital. Responsable de la lógica de datos y arquitectura web.</p>
+                    <p>Arquitecto de software y responsable de la integración de sistemas en la nube para RB Digital.</p>
                 </div>
-            </div>
-
-            <div class="collab-header">
-                <h3>Panel de Consulta Creativa</h3>
             </div>
             <div class="collab-grid">
                 <div class="collab-box"><strong>Sebastian</strong><span>Concepto</span></div>
@@ -125,43 +101,70 @@
     </section>
 
     <footer>
-        <p>&copy; 2026 RB DIGITAL | DISEÑO TÉCNICO POR ELIAS</p>
+        <p>&copy; 2026 RB DIGITAL | INFRAESTRUCTURA TECNOLÓGICA POR ELIAS</p>
     </footer>
-<script>
-document.getElementById('reportForm').addEventListener('submit', function(e) {
-    e.preventDefault(); // Evita que la página se recargue
 
-    // 1. Capturar los datos del formulario
-    const nombre = this.querySelectorAll('input')[0].value;
-    const ubicacion = this.querySelectorAll('input')[1].value;
-    const severidad = this.querySelector('select').value;
-    const detalles = this.querySelector('textarea').value;
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+        import { getDatabase, ref, push, onValue } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
 
-    // 2. Generar un Folio aleatorio tipo ingeniería
-    const folio = "#RB-" + Math.floor(1000 + Math.random() * 9000);
+        // CONFIGURACIÓN (REEMPLAZA CON TUS DATOS)
+        const firebaseConfig = {
+            apiKey: "TU_API_KEY",
+            authDomain: "TU_PROYECTO.firebaseapp.com",
+            databaseURL: "TU_URL_DE_DATABASE",
+            projectId: "TU_PROYECTO",
+            storageBucket: "TU_PROYECTO.appspot.com",
+            messagingSenderId: "TU_ID",
+            appId: "TU_APP_ID"
+        };
 
-    // 3. Crear la nueva fila para la tabla
-    const tableBody = document.querySelector('.report-table tbody');
-    const newRow = document.createElement('tr');
+        const app = initializeApp(firebaseConfig);
+        const db = getDatabase(app);
+        const reportesRef = ref(db, 'reportes');
 
-    // Definir el color del badge según la severidad
-    let badgeClass = (severidad === 'urgente') ? 'urgent' : (severidad === 'moderado' ? 'moderate' : 'light');
-    let badgeText = severidad.charAt(0).toUpperCase() + severidad.slice(1);
+        // Función global para ver comentarios
+        window.verDetalles = (msg) => {
+            alert("📝 NOTA TÉCNICA:\n\n" + msg);
+        };
 
-    newRow.innerHTML = `
-        <td>${folio}</td>
-        <td>${ubicacion}</td>
-        <td><span class="badge ${badgeClass}">${badgeText}</span></td>
-        <td><span class="status-icon pending"><i class="fas fa-clock"></i> Recibido</span></td>
-    `;
+        // Enviar datos
+        document.getElementById('reportForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const nuevoReporte = {
+                nombre: document.getElementById('form-nombre').value,
+                ubicacion: document.getElementById('form-ubicacion').value,
+                severidad: document.getElementById('form-severidad').value,
+                detalles: document.getElementById('form-detalles').value,
+                folio: "#RB-" + Math.floor(1000 + Math.random() * 9000),
+                timestamp: Date.now()
+            };
+            push(reportesRef, nuevoReporte).then(() => {
+                e.target.reset();
+                alert("Reporte enviado y sincronizado.");
+            });
+        });
 
-    // 4. Insertar la fila al principio de la tabla con un efecto visual
-    tableBody.insertBefore(newRow, tableBody.firstChild);
-
-    // 5. Limpiar el formulario y avisar al usuario
-    this.reset();
-    alert("Reporte enviado con éxito. Folio registrado: " + folio);
-});
-</script>
+        // Leer datos en tiempo real
+        onValue(reportesRef, (snapshot) => {
+            const tableBody = document.querySelector('.report-table tbody');
+            tableBody.innerHTML = "";
+            const data = snapshot.val();
+            if (data) {
+                Object.values(data).reverse().forEach((item) => {
+                    let badgeClass = (item.severidad === 'urgente') ? 'urgent' : (item.severidad === 'moderado' ? 'moderate' : 'light');
+                    const row = `
+                        <tr onclick="verDetalles('${item.detalles}')" class="clickable-row">
+                            <td>${item.folio}</td>
+                            <td>${item.ubicacion}</td>
+                            <td><span class="badge ${badgeClass}">${item.severidad}</span></td>
+                            <td><button class="view-btn"><i class="fas fa-search-plus"></i> Ver</button></td>
+                        </tr>
+                    `;
+                    tableBody.innerHTML += row;
+                });
+            }
+        });
+    </script>
 </body>
 </html>
