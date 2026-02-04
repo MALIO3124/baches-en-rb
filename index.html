@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RB Digital | Infraestructura Vial</title>
+    <title>RB Digital | Ingeniería de Infraestructura</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -14,93 +14,154 @@
         <div class="logo">RB<span>DIGITAL</span></div>
         <div class="menu">
             <a href="#inicio">Inicio</a>
-            <a href="#info">Proyecto</a>
             <a href="#reportar">Reportar</a>
+            <a href="#monitor">Monitor</a>
             <a href="#equipo">Autoría</a>
         </div>
-        <button class="nav-button">CONTACTO</button>
+        <button class="nav-button">ACCESO ADMIN</button>
     </nav>
 
     <header id="inicio" class="hero">
         <div class="hero-text">
             <span class="tag">Río Bravo, Tamaulipas</span>
             <h1>Ingeniería de <span>Caminos</span></h1>
-            <p>Plataforma avanzada para la gestión y monitoreo de infraestructura vial urbana con tecnología de vanguardia.</p>
+            <p>Plataforma técnica para la gestión urbana y optimización de infraestructura vial.</p>
         </div>
     </header>
 
-    <section id="info" class="details">
+    <section id="reportar" class="form-section">
         <div class="container">
-            <div class="info-card">
-                <h2>Análisis del Proyecto</h2>
-                <div class="divider"></div>
-                <p>Transformación digital enfocada en la optimización de recursos municipales y respuesta ciudadana inmediata.</p>
-                <div class="feature-grid">
-                    <div class="f-item"><i class="fas fa-microchip"></i> <div><strong>Tecnología:</strong> Geolocalización satelital.</div></div>
-                    <div class="f-item"><i class="fas fa-users"></i> <div><strong>Social:</strong> Participación ciudadana activa.</div></div>
-                    <div class="f-item"><i class="fas fa-chart-line"></i> <div><strong>Impacto:</strong> Seguridad vial garantizada.</div></div>
-                </div>
+            <div class="form-wrapper">
+                <span class="tag" style="color: var(--primary);">Registro Técnico</span>
+                <h2 style="color: white; margin-bottom: 2rem;">Reporte de Incidencias</h2>
+                <form id="reportForm">
+                    <div class="row">
+                        <input type="text" placeholder="Nombre completo" required>
+                        <input type="text" placeholder="Ubicación (Calle/Colonia)" required>
+                    </div>
+                    <select required>
+                        <option value="" disabled selected>Gravedad del Daño</option>
+                        <option value="urgente">Crítico / Riesgo Vial</option>
+                        <option value="moderado">Moderado / Deterioro</option>
+                        <option value="leve">Leve / Preventivo</option>
+                    </select>
+                    <textarea placeholder="Detalles técnicos del bache o desperfecto..."></textarea>
+                    <button type="submit">SUBIR AL SISTEMA CENTRAL</button>
+                </form>
             </div>
         </div>
     </section>
 
-    <section id="reportar" class="form-section">
-        <div class="form-wrapper">
-            <h2>Portal de Revisión Técnica</h2>
-            <form>
-                <div class="row">
-                    <input type="text" placeholder="Nombre del Ciudadano" required>
-                    <input type="text" placeholder="Ubicación Exacta" required>
-                </div>
-                <select>
-                    <option disabled selected>Prioridad del Reporte</option>
-                    <option>Urgente (Riesgo Vial)</option>
-                    <option>Moderado</option>
-                </select>
-                <textarea placeholder="Descripción del estado del pavimento..."></textarea>
-                <button type="submit">ENVIAR A SISTEMA CENTRAL</button>
-            </form>
+    <section id="monitor" class="monitor-section">
+        <div class="container">
+            <div class="monitor-header">
+                <span class="tag">Base de Datos Pública</span>
+                <h2>Monitor de Infraestructura</h2>
+                <p>Seguimiento en tiempo real de los reportes enviados.</p>
+            </div>
+            <div class="table-wrapper">
+                <table class="report-table">
+                    <thead>
+                        <tr>
+                            <th>Folio</th>
+                            <th>Ubicación</th>
+                            <th>Severidad</th>
+                            <th>Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>#RB-2026-01</td>
+                            <td>Av. Madero con Calle 5ta</td>
+                            <td><span class="badge urgent">Crítico</span></td>
+                            <td><span class="status-icon"><i class="fas fa-tools"></i> En Proceso</span></td>
+                        </tr>
+                        <tr>
+                            <td>#RB-2026-02</td>
+                            <td>Col. Centro, Calle Juárez</td>
+                            <td><span class="badge moderate">Moderado</span></td>
+                            <td><span class="status-icon pending"><i class="fas fa-clock"></i> Pendiente</span></td>
+                        </tr>
+                        <tr>
+                            <td>#RB-2026-03</td>
+                            <td>Libramiento Sur</td>
+                            <td><span class="badge urgent">Crítico</span></td>
+                            <td><span class="status-icon fixed"><i class="fas fa-check-circle"></i> Reparado</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </section>
 
     <section id="equipo" class="team-section">
         <div class="container">
             <div class="team-header">
-                <span class="tag">Estructura del Proyecto</span>
-                <h2>Autoría y Desarrollo</h2>
+                <span class="tag">Estructura Jerárquica</span>
+                <h2>Liderazgo y Créditos</h2>
             </div>
             
             <div class="leader-container">
                 <div class="leader-card">
                     <div class="leader-number">CEO</div>
-                    <span class="m-role">Director General & Lead Engineer</span>
+                    <span class="m-role">Lead Software Engineer</span>
                     <h3>Elias</h3>
-                    <p>Responsable único de la arquitectura del software, desarrollo del sistema y dirección técnica del proyecto RB Digital.</p>
-                    <div class="tech-stack">
-                        <span>Full Stack</span><span>Infrastructure</span><span>Project Lead</span>
-                    </div>
+                    <p>Diseñador y desarrollador principal del ecosistema RB Digital. Responsable de la lógica de datos y arquitectura web.</p>
                 </div>
             </div>
 
             <div class="collab-header">
                 <h3>Panel de Consulta Creativa</h3>
-                <p>Aportación de ideas y conceptos fundamentales.</p>
             </div>
-
             <div class="collab-grid">
-                <div class="collab-box"><strong>Sebastian</strong><span>Ideas de Datos</span></div>
-                <div class="collab-box"><strong>Paolo</strong><span>Lógica de Reporte</span></div>
-                <div class="collab-box"><strong>Ashley</strong><span>Concepto Visual</span></div>
-                <div class="collab-box"><strong>Marleny</strong><span>Gestión de Ideas</span></div>
-                <div class="collab-box"><strong>Ninfa</strong><span>Apoyo Logístico</span></div>
-                <div class="collab-box"><strong>Camila</strong><span>Comunicación</span></div>
+                <div class="collab-box"><strong>Sebastian</strong><span>Concepto</span></div>
+                <div class="collab-box"><strong>Paolo</strong><span>Lógica</span></div>
+                <div class="collab-box"><strong>Ashley</strong><span>Estética</span></div>
+                <div class="collab-box"><strong>Marleny</strong><span>Gestión</span></div>
+                <div class="collab-box"><strong>Ninfa</strong><span>Logística</span></div>
+                <div class="collab-box"><strong>Camila</strong><span>Visión</span></div>
             </div>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 RB DIGITAL | DESARROLLADO POR ELIAS</p>
+        <p>&copy; 2026 RB DIGITAL | DISEÑO TÉCNICO POR ELIAS</p>
     </footer>
+<script>
+document.getElementById('reportForm').addEventListener('submit', function(e) {
+    e.preventDefault(); // Evita que la página se recargue
 
+    // 1. Capturar los datos del formulario
+    const nombre = this.querySelectorAll('input')[0].value;
+    const ubicacion = this.querySelectorAll('input')[1].value;
+    const severidad = this.querySelector('select').value;
+    const detalles = this.querySelector('textarea').value;
+
+    // 2. Generar un Folio aleatorio tipo ingeniería
+    const folio = "#RB-" + Math.floor(1000 + Math.random() * 9000);
+
+    // 3. Crear la nueva fila para la tabla
+    const tableBody = document.querySelector('.report-table tbody');
+    const newRow = document.createElement('tr');
+
+    // Definir el color del badge según la severidad
+    let badgeClass = (severidad === 'urgente') ? 'urgent' : (severidad === 'moderado' ? 'moderate' : 'light');
+    let badgeText = severidad.charAt(0).toUpperCase() + severidad.slice(1);
+
+    newRow.innerHTML = `
+        <td>${folio}</td>
+        <td>${ubicacion}</td>
+        <td><span class="badge ${badgeClass}">${badgeText}</span></td>
+        <td><span class="status-icon pending"><i class="fas fa-clock"></i> Recibido</span></td>
+    `;
+
+    // 4. Insertar la fila al principio de la tabla con un efecto visual
+    tableBody.insertBefore(newRow, tableBody.firstChild);
+
+    // 5. Limpiar el formulario y avisar al usuario
+    this.reset();
+    alert("Reporte enviado con éxito. Folio registrado: " + folio);
+});
+</script>
 </body>
 </html>
