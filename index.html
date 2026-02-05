@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CITY PULSE | CORE TERMINAL</title>
+    <title>CITY PULSE | CORE TERMINAL v4.5</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@700&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@700&family=Inter:wght@400;600;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
@@ -15,39 +15,39 @@
         <div class="logo-sm">CITY<span>PULSE</span></div>
         <div id="admin-zone">
             <button onclick="activarAdmin()" id="btn-admin-access" class="cyber-lock">
-                <i class="fas fa-fingerprint"></i> <small>ADMIN_ACCESS</small>
+                <i class="fas fa-fingerprint"></i> <small>ADMIN_AUTH</small>
             </button>
             <div id="admin-tools" style="display: none;">
-                <span class="status-blink"></span>
+                <span class="status-dot"></span>
                 <span class="admin-id">OP_ELIAS_2026</span>
-                <button onclick="cerrarAdmin()" class="btn-lock-out">DISCONNECT</button>
+                <button onclick="cerrarAdmin()" class="btn-lock-out">TERMINATE_SESSION</button>
             </div>
         </div>
     </nav>
 
     <header class="header-core">
-        <div class="sys-info">SYSTEM_STATUS: <span class="pulse-text">OPTIMAL</span> // RB_CORE_v4.0</div>
+        <div class="sys-info">CORE_STATUS: <span class="pulse-text">ACTIVE</span> // RÍO BRAVO, TAM.</div>
         <h1 class="main-title">CITY <span>PULSE</span></h1>
-        <p class="subtitle">PLATAFORMA DE GESTIÓN E INFRAESTRUCTURA URBANA</p>
+        <p class="subtitle">INFRASTRUCTURE MONITORING & DIGITAL ARCHITECTURE</p>
     </header>
 
     <main class="main-layout">
         <section class="cyber-section reports">
-            <div class="section-header"><i class="fas fa-edit"></i> TRANSMITIR REPORTE</div>
+            <div class="section-header"><i class="fas fa-terminal"></i> DATA_INPUT</div>
             <div class="glass-container">
                 <form id="reportForm" class="report-form-styled">
                     <div class="input-group">
                         <div class="field">
-                            <label>ID_OPERADOR</label>
+                            <label>OPERATOR_ID</label>
                             <input type="text" id="form-nombre" placeholder="Nombre..." required>
                         </div>
                         <div class="field">
-                            <label>LOCALIZACIÓN</label>
-                            <input type="text" id="form-ubicacion" placeholder="Zona/Calle..." required>
+                            <label>LOCATION_TAG</label>
+                            <input type="text" id="form-ubicacion" placeholder="Calle/Colonia..." required>
                         </div>
                     </div>
                     <div class="field">
-                        <label>NIVEL_URGENCIA</label>
+                        <label>PRIORITY_LEVEL</label>
                         <select id="form-severidad" required>
                             <option value="urgente">CRÍTICO [R-01]</option>
                             <option value="moderado">MODERADO [M-02]</option>
@@ -55,22 +55,22 @@
                         </select>
                     </div>
                     <div class="field">
-                        <label>DETALLES_TÉCNICOS</label>
-                        <textarea id="form-detalles" placeholder="Describa el fallo..." rows="4" required></textarea>
+                        <label>ISSUE_LOG</label>
+                        <textarea id="form-detalles" placeholder="Especifique el fallo técnico detectado..." rows="4" required></textarea>
                     </div>
-                    <button type="submit" class="btn-send">ENVIAR AL NÚCLEO <i class="fas fa-bolt"></i></button>
+                    <button type="submit" class="btn-send">TRANSMITIR AL NÚCLEO <i class="fas fa-bolt"></i></button>
                 </form>
             </div>
         </section>
 
         <section class="cyber-section monitor">
-            <div class="section-header"><i class="fas fa-microchip"></i> LIVE_FEED</div>
+            <div class="section-header"><i class="fas fa-microchip"></i> SYSTEM_FEED</div>
             <div class="glass-container table-scroll">
                 <table class="cyber-table">
                     <thead>
                         <tr>
                             <th id="col-header-nombre">ID_TAG</th>
-                            <th>UBICACIÓN</th>
+                            <th>LOCATION</th>
                             <th>STATUS</th>
                             <th>CMD</th>
                         </tr>
@@ -82,33 +82,65 @@
     </main>
 
     <section class="team-block">
-        <h3 class="block-title">NETWORK_NODES // EL EQUIPO</h3>
+        <div class="section-tag">FRESH_TALENT_CORE</div>
+        <h3 class="block-title">NETWORK_NODES</h3>
         <div class="team-grid">
-            <div class="node"><span>Sebastian</span><small>CONCEPT</small></div>
-            <div class="node"><span>Paolo</span><small>LOGIC</small></div>
-            <div class="node"><span>Ashley</span><small>UI/UX</small></div>
-            <div class="node"><span>Marleny</span><small>MGMT</small></div>
-            <div class="node"><span>Ninfa</span><small>LOGISTICS</small></div>
-            <div class="node"><span>Camila</span><small>VISION</small></div>
+            <div class="node-young">
+                <div class="node-icon"><i class="fas fa-rocket"></i></div>
+                <span>Sebastian</span><small>CREATIVE_LEAD</small>
+            </div>
+            <div class="node-young">
+                <div class="node-icon"><i class="fas fa-code-branch"></i></div>
+                <span>Paolo</span><small>LOGIC_ARCH</small>
+            </div>
+            <div class="node-young">
+                <div class="node-icon"><i class="fas fa-palette"></i></div>
+                <span>Ashley</span><small>UI_DESIGNER</small>
+            </div>
+            <div class="node-young">
+                <div class="node-icon"><i class="fas fa-terminal"></i></div>
+                <span>Marleny</span><small>SYSTEM_MGMT</small>
+            </div>
+            <div class="node-young">
+                <div class="node-icon"><i class="fas fa-shield-alt"></i></div>
+                <span>Ninfa</span><small>SECURITY</small>
+            </div>
+            <div class="node-young">
+                <div class="node-icon"><i class="fas fa-bolt"></i></div>
+                <span>Camila</span><small>INNOVATION</small>
+            </div>
         </div>
     </section>
 
     <section class="profile-container">
-        <div class="profile-card">
-            <div class="card-top">
-                <div class="identity">
-                    <span class="rank">LEAD SOFTWARE ENGINEER</span>
-                    <h2>ELÍAS DAVID</h2>
+        <div class="profile-card-v2">
+            <div class="card-glow"></div>
+            <div class="card-content-v2">
+                <div class="identity-header">
+                    <div class="main-info">
+                        <span class="rank-tag">CHIEF ARCHITECT</span>
+                        <h2>ELÍAS DAVID</h2>
+                        <p class="personal-bio">
+                            Apasionado por transformar problemas urbanos en soluciones digitales. 
+                            Enfocado en el desarrollo Full-Stack con una visión futurista y 
+                            fiel creyente de que la tecnología debe servir para mejorar la vida de todos.
+                        </p>
+                    </div>
+                    <div class="faith-badge">
+                        <i class="fas fa-cross"></i>
+                        <span>ROMANOS 8:31</span>
+                    </div>
                 </div>
-                <div class="faith"><i class="fas fa-cross"></i> ROMANOS 8:31</div>
-            </div>
-            <div class="skills-wrap">
-                <span>HTML5</span><span>CSS3</span><span>JS_ES6</span><span>DAVINCI</span><span>CANVA</span><span>ENG_B1</span>
-            </div>
-            <div class="contact-links">
-                <a href="mailto:eliasmdz083@gmail.com" class="c-link">EMAIL</a>
-                <a href="https://github.com/MALIO3124" target="_blank" class="c-link">GITHUB</a>
-                <a href="https://www.linkedin.com/in/elias-david-433928397" target="_blank" class="c-link">LINKEDIN</a>
+                
+                <div class="skills-chips">
+                    <span>HTML5</span><span>CSS3</span><span>JS_ES6</span><span>DAVINCI</span><span>CANVA</span><span>ENG_B1</span>
+                </div>
+
+                <div class="contact-grid-v2">
+                    <a href="mailto:eliasmdz083@gmail.com" class="c-button">EMAIL</a>
+                    <a href="https://github.com/MALIO3124" target="_blank" class="c-button">GITHUB</a>
+                    <a href="https://www.linkedin.com/in/elias-david-433928397" target="_blank" class="c-button">LINKEDIN</a>
+                </div>
             </div>
         </div>
     </section>
@@ -118,7 +150,7 @@
         import { getDatabase, ref, push, onValue, remove } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
 
         const firebaseConfig = {
-            apiKey: "TU_API_KEY",
+            apiKey: "TU_API_KEY", // Reemplaza con tus datos
             authDomain: "rb-digital-d737f.firebaseapp.com",
             databaseURL: "https://rb-digital-d737f-default-rtdb.firebaseio.com/",
             projectId: "rb-digital-d737f",
@@ -149,7 +181,7 @@
             renderTable();
         };
 
-        window.borrarReporte = (id) => { if(confirm("¿ELIMINAR REGISTRO?")) remove(ref(db, `reportes/${id}`)); };
+        window.borrarReporte = (id) => { if(confirm("¿ELIMINAR REGISTRO PERMANENTE?")) remove(ref(db, `reportes/${id}`)); };
         window.verDetalles = (msg) => alert("INFORME TÉCNICO:\n" + msg);
 
         document.getElementById('reportForm').addEventListener('submit', (e) => {
@@ -159,15 +191,18 @@
                 ubicacion: document.getElementById('form-ubicacion').value,
                 severidad: document.getElementById('form-severidad').value,
                 detalles: document.getElementById('form-detalles').value,
-                folio: "XP-" + Math.floor(1000 + Math.random() * 9000)
+                folio: "RB-" + Math.floor(1000 + Math.random() * 9000)
             };
-            push(reportesRef, data).then(() => e.target.reset());
+            push(reportesRef, data).then(() => {
+                alert("DATOS TRANSMITIDOS");
+                e.target.reset();
+            });
         });
 
         function renderTable() {
             onValue(reportesRef, (snapshot) => {
                 const tableBody = document.getElementById('tablaBody');
-                document.getElementById('col-header-nombre').innerText = isAdminMode ? "REPORTADO POR" : "ID_TAG";
+                document.getElementById('col-header-nombre').innerText = isAdminMode ? "OPERADOR" : "ID_TAG";
                 tableBody.innerHTML = "";
                 const val = snapshot.val();
                 if(val) {
@@ -175,8 +210,16 @@
                         const item = val[key];
                         const identity = isAdminMode ? `<span class="admin-view">${item.nombre}</span>` : `<span class="folio">${item.folio}</span>`;
                         const delBtn = isAdminMode ? `<button onclick="borrarReporte('${key}')" class="btn-del"><i class="fas fa-trash"></i></button>` : '';
-                        tableBody.innerHTML += `<tr><td>${identity}</td><td>${item.ubicacion}</td><td><span class="tag-${item.severidad}">${item.severidad}</span></td><td>${delBtn} <button onclick="verDetalles('${item.detalles}')" class="btn-eye"><i class="fas fa-eye"></i></button></td></tr>`;
+                        tableBody.innerHTML += `
+                            <tr>
+                                <td>${identity}</td>
+                                <td>${item.ubicacion}</td>
+                                <td><span class="tag-${item.severidad}">${item.severidad.toUpperCase()}</span></td>
+                                <td>${delBtn} <button onclick="verDetalles('${item.detalles}')" class="btn-eye"><i class="fas fa-eye"></i></button></td>
+                            </tr>`;
                     });
+                } else {
+                    tableBody.innerHTML = "<tr><td colspan='4' style='text-align:center; opacity:0.3;'>NO_DATA_STREAM</td></tr>";
                 }
             });
         }
