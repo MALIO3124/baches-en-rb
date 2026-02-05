@@ -16,37 +16,35 @@
             <a href="#inicio">Inicio</a>
             <a href="#reportar">Reportar</a>
             <a href="#monitor">Monitor</a>
-            <a href="#equipo">Autoría</a>
         </div>
-        <button class="nav-button">MODO ADMIN</button>
+        <button class="nav-button">ELIAS | LEAD ENG</button>
     </nav>
 
     <header id="inicio" class="hero">
         <div class="hero-text">
             <span class="tag">Río Bravo, Tamaulipas</span>
-            <h1>Ingeniería de <span>Caminos</span></h1>
-            <p>Sincronización en la nube para la gestión de infraestructura urbana.</p>
+            <h1>Monitor de <span>Baches</span></h1>
+            <p>Sincronización en tiempo real para la mejora de nuestra ciudad.</p>
         </div>
     </header>
 
     <section id="reportar" class="form-section">
         <div class="container">
             <div class="form-wrapper">
-                <span class="tag" style="color: var(--primary);">Entrada de Datos</span>
-                <h2 style="color: white; margin-bottom: 2rem;">Reporte de Incidencias</h2>
+                <h2 style="color: white; margin-bottom: 2rem;">Nuevo Reporte</h2>
                 <form id="reportForm">
                     <div class="row">
-                        <input type="text" id="form-nombre" placeholder="Nombre completo" required>
-                        <input type="text" id="form-ubicacion" placeholder="Ubicación exacta (Calle/Colonia)" required>
+                        <input type="text" id="form-nombre" placeholder="Tu nombre" required>
+                        <input type="text" id="form-ubicacion" placeholder="Ubicación (Ej. Calle Madero con 5ta)" required>
                     </div>
                     <select id="form-severidad" required>
                         <option value="" disabled selected>Gravedad del Daño</option>
-                        <option value="urgente">Crítico / Riesgo Vial</option>
-                        <option value="moderado">Moderado / Deterioro</option>
-                        <option value="leve">Leve / Preventivo</option>
+                        <option value="urgente">Crítico / Peligroso</option>
+                        <option value="moderado">Moderado</option>
+                        <option value="leve">Leve</option>
                     </select>
-                    <textarea id="form-detalles" placeholder="Describe el problema técnico aquí..." required></textarea>
-                    <button type="submit">SUBIR A LA NUBE</button>
+                    <textarea id="form-detalles" placeholder="Escribe aquí tus comentarios o detalles técnicos..." required></textarea>
+                    <button type="submit">ENVIAR A LA NUBE</button>
                 </form>
             </div>
         </div>
@@ -55,9 +53,8 @@
     <section id="monitor" class="monitor-section">
         <div class="container">
             <div class="monitor-header">
-                <span class="tag">Base de Datos en Vivo</span>
-                <h2>Monitor de Infraestructura</h2>
-                <p>Haz clic en cualquier fila para ver los detalles técnicos del reporte.</p>
+                <h2>Panel de Control</h2>
+                <p>Haz clic en cualquier fila para leer el comentario completo.</p>
             </div>
             <div class="table-wrapper">
                 <table class="report-table">
@@ -65,70 +62,42 @@
                         <tr>
                             <th>Folio</th>
                             <th>Ubicación</th>
-                            <th>Severidad</th>
-                            <th>Acción</th>
+                            <th>Estado</th>
+                            <th>Info</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody id="tablaBody">
                         </tbody>
                 </table>
             </div>
         </div>
     </section>
 
-    <section id="equipo" class="team-section">
-        <div class="container">
-            <div class="team-header">
-                <span class="tag">Liderazgo del Proyecto</span>
-                <h2>Créditos y Desarrollo</h2>
-            </div>
-            <div class="leader-container">
-                <div class="leader-card">
-                    <span class="m-role">Lead Software Engineer</span>
-                    <h3>Elias</h3>
-                    <p>Arquitecto de software y responsable de la integración de sistemas en la nube para RB Digital.</p>
-                </div>
-            </div>
-            <div class="collab-grid">
-                <div class="collab-box"><strong>Sebastian</strong><span>Concepto</span></div>
-                <div class="collab-box"><strong>Paolo</strong><span>Lógica</span></div>
-                <div class="collab-box"><strong>Ashley</strong><span>Estética</span></div>
-                <div class="collab-box"><strong>Marleny</strong><span>Gestión</span></div>
-                <div class="collab-box"><strong>Ninfa</strong><span>Logística</span></div>
-                <div class="collab-box"><strong>Camila</strong><span>Visión</span></div>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2026 RB DIGITAL | INFRAESTRUCTURA TECNOLÓGICA POR ELIAS</p>
-    </footer>
-
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
         import { getDatabase, ref, push, onValue } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
 
-        // CONFIGURACIÓN (REEMPLAZA CON TUS DATOS)
+        // CONFIGURACIÓN OFICIAL RB DIGITAL
         const firebaseConfig = {
-            apiKey: "TU_API_KEY",
-            authDomain: "TU_PROYECTO.firebaseapp.com",
-            databaseURL: "TU_URL_DE_DATABASE",
-            projectId: "TU_PROYECTO",
-            storageBucket: "TU_PROYECTO.appspot.com",
-            messagingSenderId: "TU_ID",
-            appId: "TU_APP_ID"
+            apiKey: "TU_API_KEY_AQUÍ", 
+            authDomain: "rb-digital-d737f.firebaseapp.com",
+            databaseURL: "https://rb-digital-d737f-default-rtdb.firebaseio.com/",
+            projectId: "rb-digital-d737f",
+            storageBucket: "rb-digital-d737f.appspot.com",
+            messagingSenderId: "TU_ID_AQUÍ",
+            appId: "TU_APP_ID_AQUÍ"
         };
 
         const app = initializeApp(firebaseConfig);
         const db = getDatabase(app);
         const reportesRef = ref(db, 'reportes');
 
-        // Función global para ver comentarios
-        window.verDetalles = (msg) => {
-            alert("📝 NOTA TÉCNICA:\n\n" + msg);
+        // Función para ver el detalle al hacer click
+        window.verMas = (msg) => {
+            alert("📝 DETALLE DEL CIUDADANO:\n\n" + msg);
         };
 
-        // Enviar datos
+        // Guardar Reporte
         document.getElementById('reportForm').addEventListener('submit', (e) => {
             e.preventDefault();
             const nuevoReporte = {
@@ -136,32 +105,30 @@
                 ubicacion: document.getElementById('form-ubicacion').value,
                 severidad: document.getElementById('form-severidad').value,
                 detalles: document.getElementById('form-detalles').value,
-                folio: "#RB-" + Math.floor(1000 + Math.random() * 9000),
-                timestamp: Date.now()
+                folio: "#RB-" + Math.floor(1000 + Math.random() * 9000)
             };
             push(reportesRef, nuevoReporte).then(() => {
                 e.target.reset();
-                alert("Reporte enviado y sincronizado.");
+                alert("Sincronizado con el sistema central.");
             });
         });
 
-        // Leer datos en tiempo real
+        // Escuchar cambios
         onValue(reportesRef, (snapshot) => {
-            const tableBody = document.querySelector('.report-table tbody');
+            const tableBody = document.getElementById('tablaBody');
             tableBody.innerHTML = "";
             const data = snapshot.val();
             if (data) {
                 Object.values(data).reverse().forEach((item) => {
-                    let badgeClass = (item.severidad === 'urgente') ? 'urgent' : (item.severidad === 'moderado' ? 'moderate' : 'light');
-                    const row = `
-                        <tr onclick="verDetalles('${item.detalles}')" class="clickable-row">
+                    const badgeClass = item.severidad === 'urgente' ? 'urgent' : 'moderate';
+                    tableBody.innerHTML += `
+                        <tr onclick="verMas('${item.detalles}')" style="cursor:pointer">
                             <td>${item.folio}</td>
                             <td>${item.ubicacion}</td>
                             <td><span class="badge ${badgeClass}">${item.severidad}</span></td>
-                            <td><button class="view-btn"><i class="fas fa-search-plus"></i> Ver</button></td>
+                            <td><i class="fas fa-comment-dots"></i> Ver</td>
                         </tr>
                     `;
-                    tableBody.innerHTML += row;
                 });
             }
         });
