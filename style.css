@@ -52,3 +52,109 @@ body { background: var(--cyber-bg); color: #fff; font-family: 'Inter', sans-seri
 .folio { color: var(--neon-cyan); }
 
 @media (max-width: 900px) { .grid-container, .contact-grid { grid-template-columns: 1fr; } }
+/* Contenedor Principal con mejor balance */
+.grid-container {
+    display: grid;
+    grid-template-columns: 380px 1fr; /* Formulario más angosto, tabla más ancha */
+    gap: 25px;
+    padding: 30px 8%;
+}
+
+/* Encabezados de Panel */
+.panel-header {
+    margin-bottom: 20px;
+}
+.header-line {
+    width: 40px;
+    height: 4px;
+    background: var(--neon-cyan);
+    margin-bottom: 10px;
+}
+.panel-header h3 {
+    font-family: 'Syncopate';
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: #888;
+}
+
+/* Formulario con etiquetas reales */
+.field-wrapper {
+    margin-bottom: 15px;
+}
+.field-wrapper label {
+    display: block;
+    font-size: 9px;
+    font-weight: 900;
+    color: var(--neon-cyan);
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+}
+
+.cyber-form input, .cyber-form select, .cyber-form textarea {
+    background: rgba(0,0,0,0.5);
+    border: 1px solid #333;
+    border-left: 3px solid #333;
+    border-radius: 0;
+    transition: all 0.3s;
+}
+
+.cyber-form input:focus {
+    border-left-color: var(--neon-cyan);
+    background: rgba(0, 242, 255, 0.05);
+}
+
+/* Botón de acción potente */
+.btn-main-action {
+    width: 100%;
+    padding: 18px;
+    background: var(--neon-orange);
+    border: none;
+    color: black;
+    font-weight: 900;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    clip-path: polygon(0 0, 100% 0, 100% 70%, 85% 100%, 0 100%);
+    transition: 0.3s;
+}
+
+.btn-main-action:hover {
+    filter: brightness(1.2);
+    transform: translateY(-2px);
+}
+
+/* Tabla con mejor forma */
+.table-container {
+    background: rgba(0,0,0,0.3);
+    border: 1px solid #1a1a1a;
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.cyber-table thead {
+    background: #111;
+    position: sticky;
+    top: 0;
+}
+
+.cyber-table td {
+    padding: 20px 15px;
+    border-bottom: 1px solid #1a1a1a;
+    font-size: 13px;
+}
+
+/* Acciones en la tabla */
+.btn-del, .btn-eye {
+    width: 35px;
+    height: 35px;
+    border-radius: 4px;
+    border: 1px solid #333;
+    background: none;
+    color: #666;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-del:hover { color: #ff4444; border-color: #ff4444; }
+.btn-eye:hover { color: var(--neon-cyan); border-color: var(--neon-cyan); }
