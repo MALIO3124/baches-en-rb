@@ -3,53 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RB DIGITAL | Smart City Admin</title>
+    <title>RB DIGITAL | Cyber-Pulse Admin</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@700&family=Inter:wght@400;600;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-
     <div class="glow-bg"></div>
 
     <nav class="navbar">
         <div class="logo">RB<span>DGT</span></div>
-        <div class="admin-auth-zone">
-            <button onclick="activarAdmin()" id="btn-admin-access" class="btn-mini"><i class="fas fa-lock"></i> MODO ADMIN</button>
+        <div id="admin-status-area">
+            <button onclick="activarAdmin()" id="btn-admin-access" class="admin-lock-btn"><i class="fas fa-fingerprint"></i></button>
             <div id="admin-tools" style="display: none;">
-                <span class="admin-badge">SESIÓN: ELIAS (LEAD)</span>
-                <button onclick="cerrarAdmin()" class="btn-exit">SALIR</button>
+                <span class="admin-tag">LEAD ENGINEER ACCESS</span>
+                <button onclick="cerrarAdmin()" class="btn-exit">LOCK</button>
             </div>
         </div>
     </nav>
 
     <header class="hero">
-        <span class="cyber-tag">RÍO BRAVO 2026</span>
+        <span class="cyber-tag">RÍO BRAVO • TAMAULIPAS</span>
         <h1>CITY <span>PULSE</span></h1>
-        <p>Monitoreo de infraestructura impulsado por la comunidad.</p>
+        <p>Infraestructura urbana sincronizada en tiempo real.</p>
     </header>
 
     <main class="main-content">
-        <section id="reportar" class="glass-card form-container">
-            <h3><i class="fas fa-satellite"></i> NUEVO REPORTE</h3>
+        <div class="glass-card form-container">
+            <h3><i class="fas fa-bolt"></i> NUEVO REPORTE</h3>
             <form id="reportForm">
                 <input type="text" id="form-nombre" placeholder="Tu nombre" required>
-                <input type="text" id="form-ubicacion" placeholder="Ubicación exacta" required>
+                <input type="text" id="form-ubicacion" placeholder="Ubicación (Calle/Colonia)" required>
                 <select id="form-severidad" required>
                     <option value="" disabled selected>Prioridad</option>
-                    <option value="urgente">CRÍTICO</option>
-                    <option value="moderado">MODERADO</option>
-                    <option value="leve">LEVE</option>
+                    <option value="urgente">CRÍTICO (ROJO)</option>
+                    <option value="moderado">MODERADO (AMARILLO)</option>
+                    <option value="leve">LEVE (VERDE)</option>
                 </select>
-                <textarea id="form-detalles" placeholder="Detalles del desperfecto..." required></textarea>
-                <button type="submit" class="btn-glow">SUBIR A LA RED</button>
+                <textarea id="form-detalles" placeholder="Describe el fallo..." required></textarea>
+                <button type="submit" class="btn-glow">SUBIR A LA NUBE</button>
             </form>
-        </section>
+        </div>
 
-        <section id="monitor" class="monitor-container">
+        <div class="monitor-container">
             <div class="glass-card table-wrapper">
                 <div class="monitor-header">
-                    <h2><i class="fas fa-broadcast-tower"></i> CENTRAL LIVE</h2>
+                    <h2><i class="fas fa-satellite-dish"></i> MONITOR CENTRAL</h2>
                 </div>
                 <table class="cyber-table">
                     <thead>
@@ -57,19 +56,19 @@
                             <th>FOLIO</th>
                             <th>ZONA</th>
                             <th>NIVEL</th>
-                            <th>ACCIÓN</th>
+                            <th>GESTIÓN</th>
                         </tr>
                     </thead>
                     <tbody id="tablaBody"></tbody>
                 </table>
             </div>
-        </section>
+        </div>
     </main>
 
     <section class="team-section">
         <div class="team-header">
-            <span class="cyber-tag">THE CORE</span>
-            <h2>NUESTRO <span>EQUIPO</span></h2>
+            <span class="cyber-tag">THE CORE TEAM</span>
+            <h2>SISTEMAS <span>RB DGT</span></h2>
         </div>
         <div class="leader-grid">
             <div class="glass-card member-card leader">
@@ -80,33 +79,32 @@
         </div>
         <div class="collab-grid">
             <div class="glass-card member-card"><h4>Sebastian</h4><span>Concept</span></div>
-            <div class="glass-card member-card"><h4>Paolo</h4><span>Logic</span></div>
-            <div class="glass-card member-card"><h4>Ashley</h4><span>Visuals</span></div>
-            <div class="glass-card member-card"><h4>Marleny</h4><span>Manager</span></div>
+            <div class="glass-card member-card"><h4>Paolo</h4><span>Logic Engine</span></div>
+            <div class="glass-card member-card"><h4>Ashley</h4><span>Visual UI</span></div>
+            <div class="glass-card member-card"><h4>Marleny</h4><span>Project Mgr</span></div>
             <div class="glass-card member-card"><h4>Ninfa</h4><span>Logistics</span></div>
-            <div class="glass-card member-card"><h4>Camila</h4><span>Vision</span></div>
+            <div class="glass-card member-card"><h4>Camila</h4><span>Visionary</span></div>
         </div>
     </section>
 
     <section class="profile-section">
         <div class="glass-card profile-grid">
             <div class="profile-bio">
-                <span class="m-role">PERFIL PROFESIONAL</span>
+                <span class="m-role">PROFESSIONAL PROFILE</span>
                 <h2>Elías <span>David</span></h2>
                 <p class="bio-text">
-                    Desarrollador Web y Creador de Contenido. Mi filosofía: <strong>"La sabiduría viene de lo Alto"</strong>. 
-                    Si no lo sé hacer, lo aprenderé y lo dominaré. Disciplina de futbolista aplicada al código.
+                    Desarrollador Web y Creador de Contenido. Mi fe impulsa mi excelencia: <strong>"La sabiduría viene de lo Alto"</strong>. 
+                    Si no lo sé, lo aprendo y lo domino. Disciplina de futbolista aplicada al código.
                 </p>
                 <div class="skills-tags">
-                    <span>HTML/CSS/JS</span><span>Canva</span><span>DaVinci Resolve</span><span>Inglés B1</span>
+                    <span>HTML/CSS/JS</span><span>DaVinci Resolve</span><span>Canva</span><span>Inglés B1</span>
                 </div>
             </div>
             <div class="profile-contact">
                 <div class="contact-box">
-                    <h3>CONTACTO</h3>
                     <a href="mailto:eliasmdz083@gmail.com" class="contact-link"><i class="fas fa-envelope"></i> eliasmdz083@gmail.com</a>
                     <a href="https://github.com/MALIO3124" target="_blank" class="contact-link"><i class="fab fa-github"></i> MALIO3124</a>
-                    <a href="https://www.linkedin.com/in/elias-david-433928397" target="_blank" class="contact-link"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                    <a href="https://www.linkedin.com/in/elias-david-433928397" target="_blank" class="contact-link"><i class="fab fa-linkedin"></i> Elías David Méndez</a>
                 </div>
                 <div class="faith-card">
                     <p>"Si Dios es conmigo, ¿quién contra mí?"</p>
@@ -117,7 +115,7 @@
     </section>
 
     <footer class="final-footer">
-        <p>Derechos Reservados © 2026 Elías D.M.S. | RB DIGITAL</p>
+        <p>Derechos Reservados © 2026 Elías D.M.S. | Hecho con fe y código.</p>
     </footer>
 
     <script type="module">
@@ -125,7 +123,7 @@
         import { getDatabase, ref, push, onValue, remove } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
 
         const firebaseConfig = {
-            apiKey: "TU_API_KEY", // Reemplaza con tu API Key real
+            apiKey: "TU_API_KEY",
             authDomain: "rb-digital-d737f.firebaseapp.com",
             databaseURL: "https://rb-digital-d737f-default-rtdb.firebaseio.com/",
             projectId: "rb-digital-d737f",
@@ -138,35 +136,33 @@
         const db = getDatabase(app);
         const reportesRef = ref(db, 'reportes');
 
-        let isAdmin = false;
+        let isAdminMode = false;
 
-        // ACTIVAR MODO ADMIN
         window.activarAdmin = () => {
-            const pass = prompt("CONTRASEÑA DE ADMINISTRADOR:");
-            if (pass === "RB2026") { 
-                isAdmin = true;
+            const p = prompt("ACCESS KEY:");
+            if(p === "RB2026") {
+                isAdminMode = true;
                 document.getElementById('btn-admin-access').style.display = 'none';
                 document.getElementById('admin-tools').style.display = 'block';
                 renderTable();
-            } else { alert("ACCESO DENEGADO"); }
+            }
         };
 
         window.cerrarAdmin = () => {
-            isAdmin = false;
+            isAdminMode = false;
             document.getElementById('btn-admin-access').style.display = 'block';
             document.getElementById('admin-tools').style.display = 'none';
             renderTable();
         };
 
         window.borrarReporte = (id) => {
-            if (confirm("¿ELIMINAR ESTE REPORTE?")) {
+            if(confirm("¿CONFIRMAS ELIMINACIÓN PERMANENTE?")) {
                 remove(ref(db, `reportes/${id}`));
             }
         };
 
-        window.verDetalles = (msg) => { alert("DETALLE: " + msg); };
+        window.verDetalles = (msg) => alert("REPORTE TÉCNICO:\n" + msg);
 
-        // GUARDAR REPORTE
         document.getElementById('reportForm').addEventListener('submit', (e) => {
             e.preventDefault();
             const data = {
@@ -179,22 +175,21 @@
             push(reportesRef, data).then(() => e.target.reset());
         });
 
-        // LEER DATOS
         function renderTable() {
             onValue(reportesRef, (snapshot) => {
                 const tableBody = document.getElementById('tablaBody');
                 tableBody.innerHTML = "";
                 const val = snapshot.val();
-                if (val) {
+                if(val) {
                     Object.keys(val).reverse().forEach(key => {
                         const item = val[key];
-                        const btnBorrar = isAdmin ? `<button onclick="borrarReporte('${key}')" class="btn-del"><i class="fas fa-trash"></i></button>` : '';
+                        const delBtn = isAdminMode ? `<button onclick="borrarReporte('${key}')" class="btn-trash"><i class="fas fa-trash"></i></button>` : '';
                         tableBody.innerHTML += `
-                            <tr>
+                            <tr class="row-hover">
                                 <td class="folio">${item.folio}</td>
                                 <td>${item.ubicacion}</td>
                                 <td><span class="badge ${item.severidad}">${item.severidad}</span></td>
-                                <td>${btnBorrar} <button onclick="verDetalles('${item.detalles}')" class="btn-v"><i class="fas fa-eye"></i></button></td>
+                                <td class="actions-cell">${delBtn} <button onclick="verDetalles('${item.detalles}')" class="btn-eye"><i class="fas fa-eye"></i></button></td>
                             </tr>
                         `;
                     });
