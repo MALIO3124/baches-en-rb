@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RB DIGITAL | Cyber-Pulse Admin</title>
+    <title>RB DIGITAL | Lead Engineer System</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@700&family=Inter:wght@400;600;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -16,32 +16,32 @@
         <div id="admin-status-area">
             <button onclick="activarAdmin()" id="btn-admin-access" class="admin-lock-btn"><i class="fas fa-fingerprint"></i></button>
             <div id="admin-tools" style="display: none;">
-                <span class="admin-tag">LEAD ENGINEER ACCESS</span>
+                <span class="admin-tag"><i class="fas fa-shield-alt"></i> ELÍAS (ADMIN)</span>
                 <button onclick="cerrarAdmin()" class="btn-exit">LOCK</button>
             </div>
         </div>
     </nav>
 
     <header class="hero">
-        <span class="cyber-tag">RÍO BRAVO • TAMAULIPAS</span>
+        <span class="cyber-tag">RÍO BRAVO • 2026</span>
         <h1>CITY <span>PULSE</span></h1>
-        <p>Infraestructura urbana sincronizada en tiempo real.</p>
+        <p>Infraestructura urbana sincronizada.</p>
     </header>
 
     <main class="main-content">
         <div class="glass-card form-container">
             <h3><i class="fas fa-bolt"></i> NUEVO REPORTE</h3>
             <form id="reportForm">
-                <input type="text" id="form-nombre" placeholder="Tu nombre" required>
-                <input type="text" id="form-ubicacion" placeholder="Ubicación (Calle/Colonia)" required>
+                <input type="text" id="form-nombre" placeholder="Nombre completo" required>
+                <input type="text" id="form-ubicacion" placeholder="Ubicación exacta" required>
                 <select id="form-severidad" required>
                     <option value="" disabled selected>Prioridad</option>
-                    <option value="urgente">CRÍTICO (ROJO)</option>
-                    <option value="moderado">MODERADO (AMARILLO)</option>
-                    <option value="leve">LEVE (VERDE)</option>
+                    <option value="urgente">CRÍTICO</option>
+                    <option value="moderado">MODERADO</option>
+                    <option value="leve">LEVE</option>
                 </select>
-                <textarea id="form-detalles" placeholder="Describe el fallo..." required></textarea>
-                <button type="submit" class="btn-glow">SUBIR A LA NUBE</button>
+                <textarea id="form-detalles" placeholder="Describe el desperfecto..." required></textarea>
+                <button type="submit" class="btn-glow">SUBIR A LA RED</button>
             </form>
         </div>
 
@@ -53,7 +53,7 @@
                 <table class="cyber-table">
                     <thead>
                         <tr>
-                            <th>FOLIO</th>
+                            <th id="col-header-nombre">FOLIO</th>
                             <th>ZONA</th>
                             <th>NIVEL</th>
                             <th>GESTIÓN</th>
@@ -67,55 +67,63 @@
 
     <section class="team-section">
         <div class="team-header">
-            <span class="cyber-tag">THE CORE TEAM</span>
+            <span class="cyber-tag">THE DEVELOPMENT CORE</span>
             <h2>SISTEMAS <span>RB DGT</span></h2>
         </div>
         <div class="leader-grid">
             <div class="glass-card member-card leader">
                 <span class="m-role">Lead Software Engineer</span>
-                <h3>Elias</h3>
-                <p>Arquitecto de sistemas y responsable de la integración Cloud.</p>
+                <h3>Elías</h3>
+                <p>Responsable de la infraestructura Cloud y seguridad de datos.</p>
             </div>
         </div>
         <div class="collab-grid">
             <div class="glass-card member-card"><h4>Sebastian</h4><span>Concept</span></div>
-            <div class="glass-card member-card"><h4>Paolo</h4><span>Logic Engine</span></div>
-            <div class="glass-card member-card"><h4>Ashley</h4><span>Visual UI</span></div>
-            <div class="glass-card member-card"><h4>Marleny</h4><span>Project Mgr</span></div>
+            <div class="glass-card member-card"><h4>Paolo</h4><span>Logic</span></div>
+            <div class="glass-card member-card"><h4>Ashley</h4><span>Visuals</span></div>
+            <div class="glass-card member-card"><h4>Marleny</h4><span>Manager</span></div>
             <div class="glass-card member-card"><h4>Ninfa</h4><span>Logistics</span></div>
-            <div class="glass-card member-card"><h4>Camila</h4><span>Visionary</span></div>
+            <div class="glass-card member-card"><h4>Camila</h4><span>Vision</span></div>
         </div>
     </section>
 
     <section class="profile-section">
-        <div class="glass-card profile-grid">
+        <div class="glass-card profile-grid main-profile">
             <div class="profile-bio">
-                <span class="m-role">PROFESSIONAL PROFILE</span>
+                <span class="m-role">SENIOR FULL-STACK & CONTENT CREATOR</span>
                 <h2>Elías <span>David</span></h2>
                 <p class="bio-text">
-                    Desarrollador Web y Creador de Contenido. Mi fe impulsa mi excelencia: <strong>"La sabiduría viene de lo Alto"</strong>. 
-                    Si no lo sé, lo aprendo y lo domino. Disciplina de futbolista aplicada al código.
+                    Lidero proyectos digitales con un enfoque en la excelencia y la fe. Mi disciplina como futbolista se traduce en código robusto y diseño funcional. 
+                    <strong>"La sabiduría viene de lo Alto"</strong>.
                 </p>
                 <div class="skills-tags">
-                    <span>HTML/CSS/JS</span><span>DaVinci Resolve</span><span>Canva</span><span>Inglés B1</span>
+                    <span>HTML5/CSS3</span><span>JAVASCRIPT</span><span>DAVINCI RESOLVE</span><span>CANVA</span>
                 </div>
             </div>
+
             <div class="profile-contact">
-                <div class="contact-box">
-                    <a href="mailto:eliasmdz083@gmail.com" class="contact-link"><i class="fas fa-envelope"></i> eliasmdz083@gmail.com</a>
-                    <a href="https://github.com/MALIO3124" target="_blank" class="contact-link"><i class="fab fa-github"></i> MALIO3124</a>
-                    <a href="https://www.linkedin.com/in/elias-david-433928397" target="_blank" class="contact-link"><i class="fab fa-linkedin"></i> Elías David Méndez</a>
+                <div class="contact-buttons">
+                    <a href="mailto:eliasmdz083@gmail.com" class="pro-btn email">
+                        <i class="fas fa-envelope"></i> <span>Email Me</span>
+                    </a>
+                    <a href="https://github.com/MALIO3124" target="_blank" class="pro-btn github">
+                        <i class="fab fa-github"></i> <span>GitHub</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/elias-david-433928397" target="_blank" class="pro-btn linkedin">
+                        <i class="fab fa-linkedin"></i> <span>LinkedIn</span>
+                    </a>
                 </div>
-                <div class="faith-card">
-                    <p>"Si Dios es conmigo, ¿quién contra mí?"</p>
-                    <span>Romanos 8:31</span>
+                <div class="faith-card-v2">
+                    <i class="fas fa-quote-left"></i>
+                    <p>Si Dios es conmigo, ¿quién contra mí?</p>
+                    <span>ROMANOS 8:31</span>
                 </div>
             </div>
         </div>
     </section>
 
     <footer class="final-footer">
-        <p>Derechos Reservados © 2026 Elías D.M.S. | Hecho con fe y código.</p>
+        <p>Copyright © 2026 Elías D.M.S. | Engineered for Rio Bravo</p>
     </footer>
 
     <script type="module">
@@ -143,7 +151,7 @@
             if(p === "RB2026") {
                 isAdminMode = true;
                 document.getElementById('btn-admin-access').style.display = 'none';
-                document.getElementById('admin-tools').style.display = 'block';
+                document.getElementById('admin-tools').style.display = 'flex';
                 renderTable();
             }
         };
@@ -156,12 +164,10 @@
         };
 
         window.borrarReporte = (id) => {
-            if(confirm("¿CONFIRMAS ELIMINACIÓN PERMANENTE?")) {
-                remove(ref(db, `reportes/${id}`));
-            }
+            if(confirm("ELIMINAR REGISTRO?")) remove(ref(db, `reportes/${id}`));
         };
 
-        window.verDetalles = (msg) => alert("REPORTE TÉCNICO:\n" + msg);
+        window.verDetalles = (msg) => alert("TECHNICAL SPECS:\n" + msg);
 
         document.getElementById('reportForm').addEventListener('submit', (e) => {
             e.preventDefault();
@@ -178,15 +184,22 @@
         function renderTable() {
             onValue(reportesRef, (snapshot) => {
                 const tableBody = document.getElementById('tablaBody');
+                const headerNombre = document.getElementById('col-header-nombre');
+                
+                headerNombre.innerText = isAdminMode ? "REPORTADO POR" : "FOLIO";
+                headerNombre.style.color = isAdminMode ? "var(--primary)" : "#666";
+
                 tableBody.innerHTML = "";
                 const val = snapshot.val();
                 if(val) {
                     Object.keys(val).reverse().forEach(key => {
                         const item = val[key];
+                        const identity = isAdminMode ? `<span class="admin-view-name"><i class="fas fa-user-shield"></i> ${item.nombre}</span>` : `<span class="folio">${item.folio}</span>`;
                         const delBtn = isAdminMode ? `<button onclick="borrarReporte('${key}')" class="btn-trash"><i class="fas fa-trash"></i></button>` : '';
+                        
                         tableBody.innerHTML += `
                             <tr class="row-hover">
-                                <td class="folio">${item.folio}</td>
+                                <td>${identity}</td>
                                 <td>${item.ubicacion}</td>
                                 <td><span class="badge ${item.severidad}">${item.severidad}</span></td>
                                 <td class="actions-cell">${delBtn} <button onclick="verDetalles('${item.detalles}')" class="btn-eye"><i class="fas fa-eye"></i></button></td>
