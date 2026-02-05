@@ -3,109 +3,109 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CITY PULSE | CORE TERMINAL</title>
+    <title>CITY PULSE | RB DIGITAL CORE</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@700&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <div class="cyber-overlay"></div>
+    <div class="grid-overlay"></div>
 
-    <header class="master-header">
-        <div class="system-status">
-            <span>SYSTEM_STATUS: <span class="green-text">OPTIMAL</span></span>
-            <span>// DATA_LOG: 2026_RB</span>
-        </div>
-        
-        <h1 class="giant-title">CITY<br><span>PULSE</span></h1>
-        
-        <div class="header-footer">
-            <p>URBAN INFRASTRUCTURE MONITORING & NÚCLEO CENTRAL</p>
-            <div class="line-decorator"></div>
-        </div>
+    <header class="header-core">
+        <div class="sys-info">SYSTEM_STATUS: <span class="pulse">READY</span> // RÍO BRAVO, TAM.</div>
+        <h1 class="main-title">CITY <span>PULSE</span></h1>
+        <p class="subtitle">Plataforma de Monitoreo Urbano & Gestión de Infraestructura</p>
     </header>
 
-    <section class="mega-report-container">
-        <div class="cyber-card main-form-card">
-            <div class="card-header">
-                <i class="fas fa-satellite-dish"></i>
-                <span>TRANSMITIR NUEVO REPORTE</span>
+    <main class="main-layout">
+        <section class="cyber-section reports">
+            <div class="section-header">
+                <i class="fas fa-terminal"></i> <span>CENTRO DE TRANSMISIÓN DE DATOS</span>
             </div>
-            
-            <form id="reportForm" class="cyber-grid-form">
-                <div class="input-row">
-                    <div class="field">
-                        <label>OPERATOR_ID</label>
-                        <input type="text" id="form-nombre" placeholder="Nombre completo o ID..." required>
+            <div class="glass-container">
+                <form id="reportForm" class="report-form-styled">
+                    <div class="input-group">
+                        <div class="field">
+                            <label>ID_OPERADOR</label>
+                            <input type="text" id="form-nombre" placeholder="Nombre o Folio..." required>
+                        </div>
+                        <div class="field">
+                            <label>COORDENADAS_ZONA</label>
+                            <input type="text" id="form-ubicacion" placeholder="Calle / Colonia..." required>
+                        </div>
                     </div>
                     <div class="field">
-                        <label>GEOLOCATION_DATA</label>
-                        <input type="text" id="form-ubicacion" placeholder="Calle, Colonia, Coordenadas..." required>
-                    </div>
-                </div>
-
-                <div class="input-row">
-                    <div class="field">
-                        <label>PRIORITY_LEVEL</label>
+                        <label>NIVEL_URGENCIA</label>
                         <select id="form-severidad" required>
                             <option value="urgente">CRÍTICO [R-01]</option>
                             <option value="moderado">MODERADO [M-02]</option>
                             <option value="leve">ESTABLE [L-03]</option>
                         </select>
                     </div>
-                </div>
-
-                <div class="field">
-                    <label>TECHNICAL_DESCRIPTION</label>
-                    <textarea id="form-detalles" rows="4" placeholder="Ingrese el informe detallado del fallo detectado en el sector..."></textarea>
-                </div>
-
-                <button type="submit" class="btn-mega">
-                    ENVIAR REPORTE AL NÚCLEO <i class="fas fa-bolt"></i>
-                </button>
-            </form>
-        </div>
-
-        <div class="cyber-card monitor-card">
-            <div class="card-header">
-                <i class="fas fa-microchip"></i>
-                <span>SYSTEM_LIVE_MONITOR</span>
+                    <div class="field">
+                        <label>DESCRIPCIÓN_SISTEMA</label>
+                        <textarea id="form-detalles" placeholder="Especifique el fallo técnico..." rows="4"></textarea>
+                    </div>
+                    <button type="submit" class="btn-send">TRANSMITIR REPORTE <i class="fas fa-bolt"></i></button>
+                </form>
             </div>
-            <div class="table-wrapper">
-                <table class="data-table">
+        </section>
+
+        <section class="cyber-section monitor">
+            <div class="section-header">
+                <i class="fas fa-microchip"></i> <span>LIVE_FEED_MONITOR</span>
+            </div>
+            <div class="glass-container table-scroll">
+                <table class="cyber-table">
                     <thead>
                         <tr>
-                            <th>ID_TAG</th>
-                            <th>LOCATION</th>
+                            <th>UUID</th>
+                            <th>UBICACIÓN</th>
                             <th>STATUS</th>
                             <th>CMD</th>
                         </tr>
                     </thead>
-                    <tbody id="tablaBody">
-                        </tbody>
+                    <tbody id="tablaBody"></tbody>
                 </table>
             </div>
+        </section>
+    </main>
+
+    <section class="team-block">
+        <h3 class="block-title">NETWORK_NODES // EQUIPO</h3>
+        <div class="team-grid">
+            <div class="node"><span>Sebastian</span><small>CONCEPT</small></div>
+            <div class="node"><span>Paolo</span><small>LOGIC</small></div>
+            <div class="node"><span>Ashley</span><small>UI/UX</small></div>
+            <div class="node"><span>Marleny</span><small>MGMT</small></div>
+            <div class="node"><span>Ninfa</span><small>LOGISTICS</small></div>
+            <div class="node"><span>Camila</span><small>VISION</small></div>
         </div>
     </section>
 
-    <section class="personal-access">
-        <div class="elias-card">
-            <div class="elias-header">
-                <div>
-                    <span class="label">LEAD_ENGINEER</span>
+    <section class="profile-container">
+        <div class="profile-card">
+            <div class="card-top">
+                <div class="identity">
+                    <span class="rank">LEAD SOFTWARE ENGINEER</span>
                     <h2>ELÍAS DAVID</h2>
                 </div>
-                <div class="faith-tag">SOLI DEO GLORIA</div>
+                <div class="faith"><i class="fas fa-cross"></i> ROMANOS 8:31</div>
             </div>
-            <div class="skills-grid">
-                <span>HTML5</span><span>CSS3</span><span>JS_ES6</span><span>DAVINCI</span><span>CANVA</span><span>ENG_B1</span>
+            
+            <div class="card-content">
+                <div class="skills-wrap">
+                    <span>HTML5</span><span>CSS3</span><span>JS_ES6</span><span>DAVINCI</span><span>CANVA</span><span>ENG_B1</span>
+                </div>
+                <div class="contact-links">
+                    <a href="mailto:eliasmdz083@gmail.com" class="c-link"><i class="fas fa-envelope"></i> EMAIL</a>
+                    <a href="https://github.com/MALIO3124" class="c-link"><i class="fab fa-github"></i> GITHUB</a>
+                    <a href="https://www.linkedin.com/in/elias-david-433928397" class="c-link"><i class="fab fa-linkedin"></i> LINKEDIN</a>
+                </div>
             </div>
         </div>
     </section>
 
-    <script type="module">
-        // Mismo script de Firebase que ya tienes, conectando a tu DB
-        // ... (Mantén tu lógica de onValue y push aquí)
-    </script>
+    <footer class="footer-simple">RB_DIGITAL // CORE_SYSTEM_2026</footer>
 </body>
 </html>
