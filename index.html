@@ -26,22 +26,18 @@
 
     <header class="hero">
         <div class="hero-content">
-            <span class="cyber-label">ESTADO DEL SISTEMA: OPERATIVO</span>
-            <h1 class="glitch" data-text="CITY PULSE">CITY <span>PULSE</span></h1>
-            <p class="hero-desc">Infraestructura urbana de Río Bravo sincronizada al núcleo digital.</p>
+            <span class="cyber-label">SISTEMA DE GESTIÓN URBANA v3.0</span>
+            <h1 class="glitch">CITY <span>PULSE</span></h1>
+            <p class="hero-desc">Monitoreo de infraestructura en tiempo real para Río Bravo.</p>
         </div>
     </header>
 
     <main class="grid-container">
         <section class="glass-panel report-box">
-            <div class="panel-header">
-                <i class="fas fa-broadcast-tower"></i> <h3>TRANSMITIR REPORTE</h3>
-            </div>
+            <div class="panel-header"><i class="fas fa-broadcast-tower"></i> <h3>TRANSMITIR REPORTE</h3></div>
             <form id="reportForm">
-                <div class="input-group">
-                    <input type="text" id="form-nombre" placeholder="IDENTIDAD DEL EMISOR" required>
-                    <input type="text" id="form-ubicacion" placeholder="COORDENADAS / UBICACIÓN" required>
-                </div>
+                <input type="text" id="form-nombre" placeholder="ID DEL EMISOR (NOMBRE)" required>
+                <input type="text" id="form-ubicacion" placeholder="ZONA / CALLE / COLONIA" required>
                 <select id="form-severidad" required>
                     <option value="" disabled selected>NIVEL DE URGENCIA</option>
                     <option value="urgente">CRÍTICO [R-01]</option>
@@ -54,9 +50,7 @@
         </section>
 
         <section class="glass-panel monitor-box">
-            <div class="panel-header">
-                <i class="fas fa-terminal"></i> <h3>LIVE DATA STREAM</h3>
-            </div>
+            <div class="panel-header"><i class="fas fa-terminal"></i> <h3>LIVE DATA STREAM</h3></div>
             <div class="table-scroll">
                 <table class="cyber-table">
                     <thead>
@@ -73,48 +67,54 @@
         </section>
     </main>
 
+    <section class="team-section">
+        <div class="section-tag">NETWORK_NODES</div>
+        <h2 class="section-title">EQUIPO <span>RB DGT</span></h2>
+        <div class="team-grid">
+            <div class="glass-panel node"><h4>Sebastian</h4><span>CONCEPT ART</span></div>
+            <div class="glass-panel node"><h4>Paolo</h4><span>LOGIC ENGINE</span></div>
+            <div class="glass-panel node"><h4>Ashley</h4><span>UI DESIGN</span></div>
+            <div class="glass-panel node"><h4>Marleny</h4><span>PROJECT MGR</span></div>
+            <div class="glass-panel node"><h4>Ninfa</h4><span>LOGISTICS</span></div>
+            <div class="glass-panel node"><h4>Camila</h4><span>VISIONARY</span></div>
+        </div>
+    </section>
+
     <section class="profile-section">
         <div class="glass-panel profile-card">
             <div class="profile-header">
-                <div class="profile-title">
+                <div class="profile-main">
                     <span class="cyber-label">LEAD SOFTWARE ENGINEER</span>
                     <h2>ELÍAS <span>DAVID</span></h2>
                 </div>
                 <div class="faith-badge">
                     <i class="fas fa-cross"></i>
-                    <span>SOLI DEO GLORIA</span>
+                    <span>ROMANOS 8:31</span>
                 </div>
             </div>
             
-            <div class="profile-content">
-                <p class="bio">
-                    Arquitecto de soluciones digitales enfocado en la excelencia. 
-                    Disciplina de atleta, mente de ingeniero, guiado por la fe. 
-                    <strong>"La sabiduría viene de lo Alto"</strong>.
-                </p>
+            <div class="profile-body">
+                <p class="bio">Arquitecto Full-Stack y Creador de Contenido. Mi fe impulsa mi excelencia técnica. Disciplina de atleta aplicada al desarrollo de sistemas de alto impacto.</p>
                 
-                <div class="skills-bar">
-                    <span>HTML5</span><span>CSS3</span><span>JS_ES6</span><span>DAVINCI_R</span><span>CANVA_UI</span>
+                <div class="skills-container">
+                    <div class="skill-tag">HTML5 / CSS3</div>
+                    <div class="skill-tag">JAVASCRIPT ES6</div>
+                    <div class="skill-tag">DAVINCI RESOLVE</div>
+                    <div class="skill-tag">CANVA DESIGN</div>
+                    <div class="skill-tag">ENGLISH B1</div>
                 </div>
 
                 <div class="contact-grid">
-                    <a href="mailto:eliasmdz083@gmail.com" class="cyber-btn email">
-                        <i class="fas fa-envelope"></i> CONTACTO
-                    </a>
-                    <a href="https://github.com/MALIO3124" target="_blank" class="cyber-btn github">
-                        <i class="fab fa-github"></i> REPOSITORIO
-                    </a>
-                    <a href="https://www.linkedin.com/in/elias-david-433928397" target="_blank" class="cyber-btn linkedin">
-                        <i class="fab fa-linkedin"></i> RED PROFESIONAL
-                    </a>
+                    <a href="mailto:eliasmdz083@gmail.com" class="cyber-btn"><i class="fas fa-envelope"></i> EMAIL</a>
+                    <a href="https://github.com/MALIO3124" target="_blank" class="cyber-btn"><i class="fab fa-github"></i> GITHUB</a>
+                    <a href="https://www.linkedin.com/in/elias-david-433928397" target="_blank" class="cyber-btn"><i class="fab fa-linkedin"></i> LINKEDIN</a>
                 </div>
             </div>
         </div>
     </section>
 
     <footer class="cyber-footer">
-        <div class="footer-line"></div>
-        <p>RB_DIGITAL // SYSTEM_VERSION_3.0 // ELÍAS D.M.S.</p>
+        <p>RB_DIGITAL // SYSTEM_3.0 // ELÍAS D.M.S. © 2026</p>
     </footer>
 
     <script type="module">
@@ -153,11 +153,8 @@
             renderTable();
         };
 
-        window.borrarReporte = (id) => {
-            if(confirm("¿ELIMINAR ENTRADA DE LA BASE DE DATOS?")) remove(ref(db, `reportes/${id}`));
-        };
-
-        window.verDetalles = (msg) => alert("DETALLES TÉCNICOS:\n" + msg);
+        window.borrarReporte = (id) => { if(confirm("¿ELIMINAR DATO?")) remove(ref(db, `reportes/${id}`)); };
+        window.verDetalles = (msg) => alert("TECHNICAL SPECS:\n" + msg);
 
         document.getElementById('reportForm').addEventListener('submit', (e) => {
             e.preventDefault();
@@ -181,16 +178,9 @@
                 if(val) {
                     Object.keys(val).reverse().forEach(key => {
                         const item = val[key];
-                        const identity = isAdminMode ? `<span class="admin-name">${item.nombre}</span>` : `<span class="folio">${item.folio}</span>`;
-                        const delBtn = isAdminMode ? `<button onclick="borrarReporte('${key}')" class="btn-del"><i class="fas fa-trash-alt"></i></button>` : '';
-                        tableBody.innerHTML += `
-                            <tr class="row-pulse">
-                                <td>${identity}</td>
-                                <td>${item.ubicacion}</td>
-                                <td><span class="tag-${item.severidad}">${item.severidad}</span></td>
-                                <td>${delBtn} <button onclick="verDetalles('${item.detalles}')" class="btn-view"><i class="fas fa-eye"></i></button></td>
-                            </tr>
-                        `;
+                        const identity = isAdminMode ? `<span class="admin-view">${item.nombre}</span>` : `<span class="folio">${item.folio}</span>`;
+                        const delBtn = isAdminMode ? `<button onclick="borrarReporte('${key}')" class="btn-del"><i class="fas fa-trash"></i></button>` : '';
+                        tableBody.innerHTML += `<tr><td>${identity}</td><td>${item.ubicacion}</td><td><span class="tag-${item.severidad}">${item.severidad}</span></td><td>${delBtn} <button onclick="verDetalles('${item.detalles}')" class="btn-eye"><i class="fas fa-eye"></i></button></td></tr>`;
                     });
                 }
             });
