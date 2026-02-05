@@ -3,67 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RB Digital | Monitor de Infraestructura</title>
+    <title>RB DIGITAL | Smart City Monitor</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@700&family=Inter:wght@400;600;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
+    <div class="glow-bg"></div>
+
     <nav class="navbar">
-        <div class="logo">RB<span>DIGITAL</span></div>
-        <div class="menu">
-            <a href="#inicio">Inicio</a>
-            <a href="#reportar">Reportar</a>
-            <a href="#monitor">Monitor</a>
-        </div>
-        <button class="nav-button">ELIAS | LEAD ENG</button>
+        <div class="logo">RB<span>DGT</span></div>
+        <div class="status-pill"><div class="dot"></div> SISTEMA ACTIVO</div>
     </nav>
 
-    <header id="inicio" class="hero">
-        <div class="hero-text">
-            <span class="tag">Río Bravo, Tamaulipas</span>
-            <h1>Monitor de <span>Baches</span></h1>
-            <p>Sincronización en tiempo real para la mejora de nuestra ciudad.</p>
-        </div>
+    <header class="hero">
+        <span class="cyber-tag">RÍO BRAVO • TAMAULIPAS</span>
+        <h1>CITY <span>PULSE</span></h1>
+        <p>Infraestructura urbana sincronizada en tiempo real.</p>
     </header>
 
-    <section id="reportar" class="form-section">
-        <div class="container">
-            <div class="form-wrapper">
-                <h2 style="color: white; margin-bottom: 2rem;">Nuevo Reporte</h2>
-                <form id="reportForm">
-                    <div class="row">
-                        <input type="text" id="form-nombre" placeholder="Tu nombre" required>
-                        <input type="text" id="form-ubicacion" placeholder="Ubicación (Ej. Calle Madero con 5ta)" required>
-                    </div>
-                    <select id="form-severidad" required>
-                        <option value="" disabled selected>Gravedad del Daño</option>
-                        <option value="urgente">Crítico / Peligroso</option>
-                        <option value="moderado">Moderado</option>
-                        <option value="leve">Leve</option>
-                    </select>
-                    <textarea id="form-detalles" placeholder="Escribe aquí tus comentarios o detalles técnicos..." required></textarea>
-                    <button type="submit">ENVIAR A LA NUBE</button>
-                </form>
-            </div>
+    <main class="main-content">
+        <div class="glass-card form-container">
+            <h3><i class="fas fa-bolt"></i> NUEVO REPORTE</h3>
+            <form id="reportForm">
+                <input type="text" id="form-nombre" placeholder="Tu nombre o ID" required>
+                <input type="text" id="form-ubicacion" placeholder="Ubicación (Calle/Colonia)" required>
+                <select id="form-severidad" required>
+                    <option value="" disabled selected>Nivel de prioridad</option>
+                    <option value="urgente">CRÍTICO (ROJO)</option>
+                    <option value="moderado">MODERADO (AMARILLO)</option>
+                    <option value="leve">LEVE (VERDE)</option>
+                </select>
+                <textarea id="form-detalles" placeholder="Describe el fallo técnico..." required></textarea>
+                <button type="submit" class="btn-glow">SUBIR A LA NUBE</button>
+            </form>
         </div>
-    </section>
 
-    <section id="monitor" class="monitor-section">
-        <div class="container">
-            <div class="monitor-header">
-                <h2>Panel de Control</h2>
-                <p>Haz clic en cualquier fila para leer el comentario completo.</p>
-            </div>
-            <div class="table-wrapper">
-                <table class="report-table">
+        <div class="monitor-container">
+            <div class="glass-card table-wrapper">
+                <div class="monitor-header">
+                    <h2><i class="fas fa-satellite-dish"></i> MONITOR CENTRAL</h2>
+                </div>
+                <table class="cyber-table">
                     <thead>
                         <tr>
-                            <th>Folio</th>
-                            <th>Ubicación</th>
-                            <th>Estado</th>
-                            <th>Info</th>
+                            <th>FOLIO</th>
+                            <th>ZONA</th>
+                            <th>NIVEL</th>
+                            <th>INFO</th>
                         </tr>
                     </thead>
                     <tbody id="tablaBody">
@@ -71,62 +59,62 @@
                 </table>
             </div>
         </div>
-    </section>
+    </main>
+
+    <footer>
+        <p>ENGINEERED BY <strong>ELIAS</strong> • RB DIGITAL 2026</p>
+    </footer>
 
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
         import { getDatabase, ref, push, onValue } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
 
-        // CONFIGURACIÓN OFICIAL RB DIGITAL
         const firebaseConfig = {
-            apiKey: "TU_API_KEY_AQUÍ", 
+            apiKey: "TU_API_KEY",
             authDomain: "rb-digital-d737f.firebaseapp.com",
             databaseURL: "https://rb-digital-d737f-default-rtdb.firebaseio.com/",
             projectId: "rb-digital-d737f",
             storageBucket: "rb-digital-d737f.appspot.com",
-            messagingSenderId: "TU_ID_AQUÍ",
-            appId: "TU_APP_ID_AQUÍ"
+            messagingSenderId: "TU_ID",
+            appId: "TU_APP_ID"
         };
 
         const app = initializeApp(firebaseConfig);
         const db = getDatabase(app);
         const reportesRef = ref(db, 'reportes');
 
-        // Función para ver el detalle al hacer click
-        window.verMas = (msg) => {
-            alert("📝 DETALLE DEL CIUDADANO:\n\n" + msg);
+        window.verDetalles = (msg) => {
+            alert("📝 REPORTE TÉCNICO:\n\n" + msg);
         };
 
-        // Guardar Reporte
         document.getElementById('reportForm').addEventListener('submit', (e) => {
             e.preventDefault();
-            const nuevoReporte = {
+            const nuevo = {
                 nombre: document.getElementById('form-nombre').value,
                 ubicacion: document.getElementById('form-ubicacion').value,
                 severidad: document.getElementById('form-severidad').value,
                 detalles: document.getElementById('form-detalles').value,
-                folio: "#RB-" + Math.floor(1000 + Math.random() * 9000)
+                folio: "ID-" + Math.floor(1000 + Math.random() * 9000)
             };
-            push(reportesRef, nuevoReporte).then(() => {
+            push(reportesRef, nuevo).then(() => {
                 e.target.reset();
-                alert("Sincronizado con el sistema central.");
+                alert("DATOS ENVIADOS AL SATÉLITE");
             });
         });
 
-        // Escuchar cambios
         onValue(reportesRef, (snapshot) => {
             const tableBody = document.getElementById('tablaBody');
             tableBody.innerHTML = "";
             const data = snapshot.val();
             if (data) {
                 Object.values(data).reverse().forEach((item) => {
-                    const badgeClass = item.severidad === 'urgente' ? 'urgent' : 'moderate';
+                    const badgeClass = item.severidad === 'urgente' ? 'urgent' : (item.severidad === 'moderado' ? 'moderate' : 'low');
                     tableBody.innerHTML += `
-                        <tr onclick="verMas('${item.detalles}')" style="cursor:pointer">
-                            <td>${item.folio}</td>
+                        <tr onclick="verDetalles('${item.detalles}')" class="row-hover">
+                            <td class="folio">${item.folio}</td>
                             <td>${item.ubicacion}</td>
                             <td><span class="badge ${badgeClass}">${item.severidad}</span></td>
-                            <td><i class="fas fa-comment-dots"></i> Ver</td>
+                            <td><i class="fas fa-expand-alt"></i></td>
                         </tr>
                     `;
                 });
