@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CITY PULSE | RB DIGITAL CORE</title>
+    <title>CITY PULSE | CORE TERMINAL</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@700&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -11,27 +11,39 @@
 <body>
     <div class="grid-overlay"></div>
 
+    <nav class="admin-nav">
+        <div class="logo-sm">CITY<span>PULSE</span></div>
+        <div id="admin-zone">
+            <button onclick="activarAdmin()" id="btn-admin-access" class="cyber-lock">
+                <i class="fas fa-fingerprint"></i> <small>ADMIN_ACCESS</small>
+            </button>
+            <div id="admin-tools" style="display: none;">
+                <span class="status-blink"></span>
+                <span class="admin-id">OP_ELIAS_2026</span>
+                <button onclick="cerrarAdmin()" class="btn-lock-out">DISCONNECT</button>
+            </div>
+        </div>
+    </nav>
+
     <header class="header-core">
-        <div class="sys-info">SYSTEM_STATUS: <span class="pulse">READY</span> // RÍO BRAVO, TAM.</div>
+        <div class="sys-info">SYSTEM_STATUS: <span class="pulse-text">OPTIMAL</span> // RB_CORE_v4.0</div>
         <h1 class="main-title">CITY <span>PULSE</span></h1>
-        <p class="subtitle">Plataforma de Monitoreo Urbano & Gestión de Infraestructura</p>
+        <p class="subtitle">PLATAFORMA DE GESTIÓN E INFRAESTRUCTURA URBANA</p>
     </header>
 
     <main class="main-layout">
         <section class="cyber-section reports">
-            <div class="section-header">
-                <i class="fas fa-terminal"></i> <span>CENTRO DE TRANSMISIÓN DE DATOS</span>
-            </div>
+            <div class="section-header"><i class="fas fa-edit"></i> TRANSMITIR REPORTE</div>
             <div class="glass-container">
                 <form id="reportForm" class="report-form-styled">
                     <div class="input-group">
                         <div class="field">
                             <label>ID_OPERADOR</label>
-                            <input type="text" id="form-nombre" placeholder="Nombre o Folio..." required>
+                            <input type="text" id="form-nombre" placeholder="Nombre..." required>
                         </div>
                         <div class="field">
-                            <label>COORDENADAS_ZONA</label>
-                            <input type="text" id="form-ubicacion" placeholder="Calle / Colonia..." required>
+                            <label>LOCALIZACIÓN</label>
+                            <input type="text" id="form-ubicacion" placeholder="Zona/Calle..." required>
                         </div>
                     </div>
                     <div class="field">
@@ -43,23 +55,21 @@
                         </select>
                     </div>
                     <div class="field">
-                        <label>DESCRIPCIÓN_SISTEMA</label>
-                        <textarea id="form-detalles" placeholder="Especifique el fallo técnico..." rows="4"></textarea>
+                        <label>DETALLES_TÉCNICOS</label>
+                        <textarea id="form-detalles" placeholder="Describa el fallo..." rows="4" required></textarea>
                     </div>
-                    <button type="submit" class="btn-send">TRANSMITIR REPORTE <i class="fas fa-bolt"></i></button>
+                    <button type="submit" class="btn-send">ENVIAR AL NÚCLEO <i class="fas fa-bolt"></i></button>
                 </form>
             </div>
         </section>
 
         <section class="cyber-section monitor">
-            <div class="section-header">
-                <i class="fas fa-microchip"></i> <span>LIVE_FEED_MONITOR</span>
-            </div>
+            <div class="section-header"><i class="fas fa-microchip"></i> LIVE_FEED</div>
             <div class="glass-container table-scroll">
                 <table class="cyber-table">
                     <thead>
                         <tr>
-                            <th>UUID</th>
+                            <th id="col-header-nombre">ID_TAG</th>
                             <th>UBICACIÓN</th>
                             <th>STATUS</th>
                             <th>CMD</th>
@@ -72,7 +82,7 @@
     </main>
 
     <section class="team-block">
-        <h3 class="block-title">NETWORK_NODES // EQUIPO</h3>
+        <h3 class="block-title">NETWORK_NODES // EL EQUIPO</h3>
         <div class="team-grid">
             <div class="node"><span>Sebastian</span><small>CONCEPT</small></div>
             <div class="node"><span>Paolo</span><small>LOGIC</small></div>
@@ -92,20 +102,85 @@
                 </div>
                 <div class="faith"><i class="fas fa-cross"></i> ROMANOS 8:31</div>
             </div>
-            
-            <div class="card-content">
-                <div class="skills-wrap">
-                    <span>HTML5</span><span>CSS3</span><span>JS_ES6</span><span>DAVINCI</span><span>CANVA</span><span>ENG_B1</span>
-                </div>
-                <div class="contact-links">
-                    <a href="mailto:eliasmdz083@gmail.com" class="c-link"><i class="fas fa-envelope"></i> EMAIL</a>
-                    <a href="https://github.com/MALIO3124" class="c-link"><i class="fab fa-github"></i> GITHUB</a>
-                    <a href="https://www.linkedin.com/in/elias-david-433928397" class="c-link"><i class="fab fa-linkedin"></i> LINKEDIN</a>
-                </div>
+            <div class="skills-wrap">
+                <span>HTML5</span><span>CSS3</span><span>JS_ES6</span><span>DAVINCI</span><span>CANVA</span><span>ENG_B1</span>
+            </div>
+            <div class="contact-links">
+                <a href="mailto:eliasmdz083@gmail.com" class="c-link">EMAIL</a>
+                <a href="https://github.com/MALIO3124" target="_blank" class="c-link">GITHUB</a>
+                <a href="https://www.linkedin.com/in/elias-david-433928397" target="_blank" class="c-link">LINKEDIN</a>
             </div>
         </div>
     </section>
 
-    <footer class="footer-simple">RB_DIGITAL // CORE_SYSTEM_2026</footer>
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+        import { getDatabase, ref, push, onValue, remove } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
+
+        const firebaseConfig = {
+            apiKey: "TU_API_KEY",
+            authDomain: "rb-digital-d737f.firebaseapp.com",
+            databaseURL: "https://rb-digital-d737f-default-rtdb.firebaseio.com/",
+            projectId: "rb-digital-d737f",
+            storageBucket: "rb-digital-d737f.appspot.com",
+            messagingSenderId: "TU_ID",
+            appId: "TU_APP_ID"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getDatabase(app);
+        const reportesRef = ref(db, 'reportes');
+
+        let isAdminMode = false;
+
+        window.activarAdmin = () => {
+            if(prompt("ACCESS KEY:") === "RB2026") {
+                isAdminMode = true;
+                document.getElementById('btn-admin-access').style.display = 'none';
+                document.getElementById('admin-tools').style.display = 'flex';
+                renderTable();
+            }
+        };
+
+        window.cerrarAdmin = () => {
+            isAdminMode = false;
+            document.getElementById('btn-admin-access').style.display = 'block';
+            document.getElementById('admin-tools').style.display = 'none';
+            renderTable();
+        };
+
+        window.borrarReporte = (id) => { if(confirm("¿ELIMINAR REGISTRO?")) remove(ref(db, `reportes/${id}`)); };
+        window.verDetalles = (msg) => alert("INFORME TÉCNICO:\n" + msg);
+
+        document.getElementById('reportForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const data = {
+                nombre: document.getElementById('form-nombre').value,
+                ubicacion: document.getElementById('form-ubicacion').value,
+                severidad: document.getElementById('form-severidad').value,
+                detalles: document.getElementById('form-detalles').value,
+                folio: "XP-" + Math.floor(1000 + Math.random() * 9000)
+            };
+            push(reportesRef, data).then(() => e.target.reset());
+        });
+
+        function renderTable() {
+            onValue(reportesRef, (snapshot) => {
+                const tableBody = document.getElementById('tablaBody');
+                document.getElementById('col-header-nombre').innerText = isAdminMode ? "REPORTADO POR" : "ID_TAG";
+                tableBody.innerHTML = "";
+                const val = snapshot.val();
+                if(val) {
+                    Object.keys(val).reverse().forEach(key => {
+                        const item = val[key];
+                        const identity = isAdminMode ? `<span class="admin-view">${item.nombre}</span>` : `<span class="folio">${item.folio}</span>`;
+                        const delBtn = isAdminMode ? `<button onclick="borrarReporte('${key}')" class="btn-del"><i class="fas fa-trash"></i></button>` : '';
+                        tableBody.innerHTML += `<tr><td>${identity}</td><td>${item.ubicacion}</td><td><span class="tag-${item.severidad}">${item.severidad}</span></td><td>${delBtn} <button onclick="verDetalles('${item.detalles}')" class="btn-eye"><i class="fas fa-eye"></i></button></td></tr>`;
+                    });
+                }
+            });
+        }
+        renderTable();
+    </script>
 </body>
 </html>
